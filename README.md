@@ -34,6 +34,11 @@ trimmomatic PE -phred33 01_data/S_1_EKDL240005957-1A_227F5WLT4_L7_1.fq 01_data/S
 ```
 где схема команды: trimmomatic PE (парные чтения) <инпут1> <инпут2> <аутпут1> <аутпут2> <аутпут3> <аутпут4> /путь/до/адаптера/ :дополнительные функции
 
-
+парные чтения выровняли только 50%, запуск как сингл эенд риды:
+``` bash
+trimmomatic SE -phred33 01_data/S_1_EKDL240005957-1A_227F5WLT4_L7_1.fq 04_output/L7_trimm_SE ILLUMINACLIP:/mnt/projects/esafronicheva/mnt/projects/esafronicheva/anaconda_new/envs/Trimm/share/trimmomatic-0.39-2/adapters/TruSeq3-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+```
+файл L4: Input Reads: 218703211 Surviving: 215915204 (98.73%) Dropped: 2788007 (1.27%)
+файл L7: Input Reads: 25531243 Surviving: 25263663 (98.95%) Dropped: 267580 (1.05%)
 
 
