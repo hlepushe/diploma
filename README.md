@@ -72,7 +72,16 @@ process_radtags -f /mnt/projects/esafronicheva/diploma/04_output/L7_trimm_SE -b 
 conda install bioconda::bwa
 bwa index Betula_pendula_subsp_pendula.fasta
 ```
-
+установка snakemake в отдельное окружение 
+```
+conda install bioconda::snakemake
+```
+объединение файлов после демультиплексинга в один файл по баркодам и номерам:
+```
+for file in /mnt/projects/esafronicheva/diploma/04_output/radtags_L4/*.fq; do sample_name=$(basename "$file"); cat "$file" "/mnt/projects/esafronicheva/diploma/04_output/radtags_L7/$sample_n
+ame" > "merged_dumulty/m_$sample_name"; done
+```
+так делать нельзя, но что нам остается ..
 
 
 
