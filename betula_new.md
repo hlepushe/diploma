@@ -20,3 +20,15 @@ process_radtags -f /mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/
 -b /mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/barcodes_24.txt -o radtags_1/ -e hindIII -r -c -q
 ```
 аналогичная команда для второго файла S_1_FKDL240122156-1A_22G5CCLT4_L1_2.fq
+
+для файла1
+304474863 total sequences 617303 ambiguous barcode drops (0.2%) 
+275256 low quality read drops (0.1%) 1130818 ambiguous RAD-Tag drops (0.4%)
+302451486 retained reads (99.3%)
+
+для файла2
+304474863 total sequences
+275094186 ambiguous barcode drops (90.4%)
+     3630 low quality read drops (0.0%)
+ 28745155 ambiguous RAD-Tag drops (9.4%)
+   631892 retained reads (0.2%)
