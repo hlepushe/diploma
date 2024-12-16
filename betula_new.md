@@ -32,3 +32,8 @@ process_radtags -f /mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/
      3630 low quality read drops (0.0%)
  28745155 ambiguous RAD-Tag drops (9.4%)
    631892 retained reads (0.2%)
+
+4. Мерджинг ридов по баркодам (так нельзя, но нет слёрма и снейкмейка)
+   ```
+   for file in /mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/radtags_1/*.fq; do sample_name=$(basename "$file"); cat "$file" "/mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/radtags_2/$sample_name" > "merged_dumulty/m_$sample_name"; done
+   ```
