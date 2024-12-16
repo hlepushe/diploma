@@ -48,7 +48,7 @@ conda create -n stacks
 conda activate stacks
 conda install bioconda::stacks
 ```
-запуск как сингл-энд файла. перед запуском надо создать директорию аутпута. 
+запуск как сингл-энд файла. перед запуском надо создать директорию аутпута. файл баркодов имеет вид <баркод>tab<номер>. _именно через tab_
 ```
 process_radtags -f /mnt/projects/esafronicheva/diploma/04_output/L7_trimm_SE -b /mnt/projects/esafronicheva/diploma/01_data/barcodes.txt -o radtags_L7/ -e hindIII -r -c -q
 ```
