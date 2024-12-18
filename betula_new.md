@@ -33,7 +33,23 @@ process_radtags -f /mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/
  28745155 ambiguous RAD-Tag drops (9.4%)
    631892 retained reads (0.2%)
 
-4. Мерджинг ридов по баркодам (так нельзя, но нет слёрма и снейкмейка)
+4. __Мерджинг ридов по баркодам (так нельзя, но нет слёрма и снейкмейка)__
    ```
    for file in /mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/radtags_1/*.fq; do sample_name=$(basename "$file"); cat "$file" "/mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/radtags_2/$sample_name" > "merged_dumulty/m_$sample_name"; done
    ```
+5. __тримминг__
+   
+для тримминга написан отдельный trimm.sh файл, который прикреплен в репозитории
+
+7. __Индексирование референса__
+```
+bwa index $ref
+```
+
+
+7. __выравнивание__
+   
+выравнивание bwa mem, команда выравнивания в файле align.sh
+     
+     
+
