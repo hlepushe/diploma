@@ -53,8 +53,17 @@ bwa index $ref
 
 8. __команды pikard__
 
-   перед снп-коллингом необходимо обработать данные pikard, для этого выполняем 3 файла (приложены в репозитории). 
+   перед снп-коллингом необходимо обработать данные pikard, для этого выполняем 3 файла (приложены в репозитории).
+   
    1 pikard_read_groups.sh
+   
    2 sorting.sh
-   3 index.sh     
+   
+   3 index.sh
+9. __индексирование референса перед коллингом снп__ (команды вставить свои)
+
+    ```
+samtools faidx Betula_pendula_subsp_pendula.fasta
+ava -jar /mnt/projects/mtis/picard/build/libs/picard.jar CreateSequenceDictionary -R Betula_pendula_subsp_pendula.fasta -O Betula_pendula_subsp_pendula.dict
+    ```
 
