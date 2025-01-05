@@ -60,9 +60,9 @@ bwa index $ref
    2 sorting.sh
    
    3 index.sh
-9. __индексирование референса перед коллингом снп__ (команды вставить свои)
+9. __индексирование референса перед коллингом снп__ 
 
 ``` bash 
 samtools faidx Betula_pendula_subsp_pendula.fasta
 ```
-+ файл ref_dict.sh 
+плюс выполнен файл ref_dict.sh 
