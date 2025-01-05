@@ -62,8 +62,7 @@ bwa index $ref
    3 index.sh
 9. __индексирование референса перед коллингом снп__ (команды вставить свои)
 
-    ```
+```
 samtools faidx Betula_pendula_subsp_pendula.fasta
 ava -jar /mnt/projects/mtis/picard/build/libs/picard.jar CreateSequenceDictionary -R Betula_pendula_subsp_pendula.fasta -O Betula_pendula_subsp_pendula.dict
-    ```
-
+```
