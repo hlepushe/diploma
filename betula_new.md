@@ -42,7 +42,7 @@ process_radtags -f /mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/
 для тримминга написан отдельный trimm.sh файл, который прикреплен в репозитории
 
 7. __Индексирование референса__
-```
+``` bash
 bwa index $ref
 ```
 
@@ -62,7 +62,7 @@ bwa index $ref
    3 index.sh
 9. __индексирование референса перед коллингом снп__ (команды вставить свои)
 
-```
+``` bash 
 samtools faidx Betula_pendula_subsp_pendula.fasta
-ava -jar /mnt/projects/mtis/picard/build/libs/picard.jar CreateSequenceDictionary -R Betula_pendula_subsp_pendula.fasta -O Betula_pendula_subsp_pendula.dict
 ```
++ файл ref_dict.sh 
