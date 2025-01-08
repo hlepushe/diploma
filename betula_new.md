@@ -39,7 +39,7 @@ process_radtags -f /mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/
    ```
 5. __тримминг__
    
-для тримминга написан отдельный trimm.sh файл, который прикреплен в репозитории
+для тримминга написан отдельный 05-trimm.sh файл, который прикреплен в репозитории
 
 7. __Индексирование референса__
 ``` bash
@@ -49,20 +49,23 @@ bwa index $ref
 
 7. __выравнивание__
    
-выравнивание bwa mem, команда выравнивания в файле align.sh
+выравнивание bwa mem, команда выравнивания в файле 07-align.sh
 
 8. __команды pikard__
 
    перед снп-коллингом необходимо обработать данные pikard, для этого выполняем 3 файла (приложены в репозитории).
    
-   1 pikard_read_groups.sh
+   1 08.1-pikard_read_groups.sh
    
-   2 sorting.sh
+   2 08.2-sorting.sh
    
-   3 index.sh
+   3 08.3-index.sh
 9. __индексирование референса перед коллингом снп__ 
 
 ``` bash 
 samtools faidx Betula_pendula_subsp_pendula.fasta
 ```
-плюс выполнен файл ref_dict.sh 
+плюс выполнен файл 09-ref_dict.sh 
+
+10. __коллинг вариантов (SNP)__
+выполнение файла 10-haplotype_caller.sh
