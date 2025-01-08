@@ -11,5 +11,4 @@ for BAM_FILE in "$INPUT_DIR"/*_sorted.bam; do
   java -jar "$PICARD_JAR" BuildBamIndex \
   I=$input_dir/$BAM_FILE
   
-
 done
