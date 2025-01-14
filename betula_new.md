@@ -77,5 +77,11 @@ samtools faidx Betula_pendula_subsp_pendula.fasta
 после комбинирование - индексация (файл 11.1-indexing.sh)
 
 12. __генотипирование__
-    файл 12-genotiping.sh 
-    
+    файл 12-genotiping.sh
+
+подсчет полученных snp 
+
+```
+bcftools view -v snps birch_biallelic.vcf.gz | wc -l
+```    
+итого: 2 215 016    
