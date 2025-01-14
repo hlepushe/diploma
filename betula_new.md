@@ -4,6 +4,7 @@
 trimmomatic SE -phred33 S_1_FKDL240122156-1A_22G5CCLT4_L1_2.fq 04_output/L1_2_SE ILLUMINACLIP:/mnt/projects/esafronicheva/mnt/projects/esafronicheva/anaconda_new/envs/Trimm/share/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:45
 ```
 это пример одной из многих команд, параметры менялись (PE/SE, SLIDINGWINDOW, MINLEN)
+
 2. __проверка качества триммиинга__
 ```
 fastqc S_1_FKDL240122156-1A_22G5CCLT4_L1_1.fq
