@@ -85,3 +85,18 @@ samtools faidx Betula_pendula_subsp_pendula.fasta
 bcftools view -v snps birch_biallelic.vcf.gz | wc -l
 ```    
 итого: 2 215 016    
+среднее покрытие 1 спн по всем образцам:
+```
+ bcftools query -f '%DP\n' birch_biallelic.vcf.gz | awk '{sum+=$1; count++} END {print "Среднее покрытие:", sum/count}'
+```
+Среднее покрытие: 552.476
+
+среднее покрытие 1 снп в одном образце: 
+```
+vcftools --gzvcf birch_biallelic.vcf.gz --depth --out output
+```
+создастся файл  output.idepth, затем:
+```
+awk '{sum+=$3} END {print "Среднее покрытие всех индивидов:", sum/NR}' output.idepth
+```
+Среднее покрытие всех индивидов: 5.69776
