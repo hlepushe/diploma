@@ -21,8 +21,8 @@ for file in *.fq; do
         base_name=$(basename "$file" .fq)
 
         # Запустите Trimmomatic
-        trimmomatic SE -phred33 "$file" "$output_dir/${base_name}_trimmed.fq" \
-            ILLUMINACLIP:"$adapter_file":2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:45
+         trimmomatic SE -phred33 "$file" "$output_dir/${base_name}_trimmed.fq" \
+            ILLUMINACLIP:"$adapter_file":2:30:10 HEADCROP:6 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:45
         echo "Файл $file обработан и сохранен как ${base_name}_trimmed.fq."
     else
         echo "Файл $file не найден."
