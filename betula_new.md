@@ -108,3 +108,6 @@ vcftools --gzvcf birch_biallelic.vcf.gz --depth --out output
 awk '{sum+=$3} END {print "Среднее покрытие всех индивидов:", sum/NR}' output.idepth
 ```
 Среднее покрытие всех индивидов: 5.69776
+
+13. __фильтрация__
+    файл 13_filter1.sh
