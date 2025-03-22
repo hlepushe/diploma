@@ -113,24 +113,34 @@ awk '{sum+=$3} END {print "Среднее покрытие всех индиви
     файл 13_filter1.sh
 
 14. __ГВАС__
-     установка gemma, plink2
+
+установка gemma, plink2 в отдельные окружения:
 
 ```bash
 conda install bioconda/label/cf201901::gemma
 conda install bioconda::plink2
 ```
 
-   plink
+   plink:
 ```
 plink2 --vcf filtered_rename.vcf --make-bed --out plink2  --allow-extra-chr
 plink2 --bfile plink2 --input-missing-phenotype -9 --pheno phenotype.txt --make-bed --out plink_pheno --allow-extra-chr
 ```
+
+файл фенотипа приложен в репозиотри
+
    gemma:
 ```
 gemma -bfile plink_pheno -gk 1 -o kinship_matrix 
 gemma -bfile plink_pheno -gk 2 -o kinship_matrix_2
 gemma -bfile plink_pheno -lmm 4 -n 1 -o gwas_results -k ./output/kinship_matrix.cXX.txt
 ```
+
+15. __визуализации__
+
+визуализация в R, для PCA берется файл filtered_rename.vcf с переименованными образцами, для манхэттен и КК - результаты геммы: gwas_results.assoc.txt
+
+Файлы постороения графиков приложены в директории
 
 
 
