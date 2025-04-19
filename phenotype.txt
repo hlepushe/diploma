@@ -1,3 +1,4 @@
+1- bush, 2- high, 3- short, 4- none
 0 100.fq 1
 0 101.fq 1
 0 102.fq 2
