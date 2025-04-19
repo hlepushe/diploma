@@ -114,6 +114,8 @@ awk '{sum+=$3} END {print "Среднее покрытие всех индиви
 
 14. __ГВАС__
 
+для поиска снп, связанных с разнами типами карелистости, надо сделать 4 файла фенотипов, где 1 - целевой признак, 2 - все остальные. Принцип "один-против-всех". Запускаем 4 гваса и получаем 4 графика значимых спн по каждому признаку. 
+
 установка gemma, plink2 в отдельные окружения:
 
 ```bash
@@ -127,8 +129,6 @@ plink2 --vcf filtered_rename.vcf --make-bed --out plink2  --allow-extra-chr
 plink2 --bfile plink2 --input-missing-phenotype -9 --pheno phenotype.txt --make-bed --out plink_pheno --allow-extra-chr
 ```
 
-файл фенотипа приложен в репозиотри
-
    gemma:
 ```
 gemma -bfile plink_pheno -gk 1 -o kinship_matrix 
@@ -138,7 +138,7 @@ gemma -bfile plink_pheno -lmm 4 -n 1 -o gwas_results -k ./output/kinship_matrix.
 
 15. __визуализации__
 
-визуализация в R, для PCA берется файл filtered_rename.vcf с переименованными образцами, для манхэттен и КК - результаты геммы: gwas_results.assoc.txt
+визуализация в R, для PCA и MNDS берется файл filtered_rename.vcf с переименованными образцами, для манхэттен и КК - результаты геммы: gwas_results.assoc.txt
 
 Файлы постороения графиков приложены в директории
 
