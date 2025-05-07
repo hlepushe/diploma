@@ -136,6 +136,12 @@ gemma -bfile plink_pheno -gk 2 -o kinship_matrix_2
 gemma -bfile plink_pheno -lmm 4 -n 1 -o gwas_results -k ./output/kinship_matrix.cXX.txt
 ```
 
+чтобы исключить образцы из выборки: 
+```
+ vcftools --vcf filtered_rename.vcf --remove exclude.txt --recode --out filter
+```
+в файл exclude.txt записаны номера образцов, которые надо исключить ил файла filtered_rename.vcf
+
 15. __визуализации__
 
 визуализация в R, для PCA и MNDS берется файл filtered_rename.vcf с переименованными образцами, для манхэттен и КК - результаты геммы: gwas_results.assoc.txt
