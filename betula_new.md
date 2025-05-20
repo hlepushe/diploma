@@ -34,7 +34,7 @@ process_radtags -f /mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/
  28745155 ambiguous RAD-Tag drops (9.4%)
    631892 retained reads (0.2%)
 
-4. __Мерджинг ридов по баркодам (так нельзя, но нет слёрма и снейкмейка)__
+4. __Мерджинг ридов по баркодам __
    ```
    for file in /mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/radtags_1/*.fq; do sample_name=$(basename "$file"); cat "$file" "/mnt/projects/esafronicheva/diploma/betula_new/01_data/fastq/radtags_2/$sample_name" > "merged_dumulty/m_$sample_name"; done
    ```
@@ -111,8 +111,12 @@ awk '{sum+=$3} END {print "Среднее покрытие всех индиви
 
 13. __фильтрация__
     файл 13_filter1.sh
-
-14. __ГВАС__
+    для фильтрации по макс-миссинг:
+    ``
+    vcftools --vcf filtered_rename.vcf --max-missing 0.6 --recode --recode-INFO-all --out filtered_maxmissing60
+    ``
+    
+15. __ГВАС__
 
 для поиска снп, связанных с разнами типами карелистости, надо сделать 4 файла фенотипов, где 1 - целевой признак, 2 - все остальные. Принцип "один-против-всех". Запускаем 4 гваса и получаем 4 графика значимых спн по каждому признаку. 
 
