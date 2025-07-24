@@ -8,4 +8,12 @@
   print
 }' phenotype_new.txt > short_pheno.txt
 ```
-4. создать 4 папки и переместить туда vcf и соответствующие фенотипы 
+4. создать 4 папки и переместить туда vcf и соответствующие фенотипы
+5. ```
+   plink2 --vcf filtered_maxmissing80.recode.vcf --make-bed --out plink2  --allow-extra-chr
+   plink2 --bfile plink2 --input-missing-phenotype -9 --pheno pheno_bush.txt --make-bed --out plink_pheno --allow-extra-chr
+   gemma -bfile plink_pheno -gk 1 -o kinship_matrix
+   gemma -bfile plink_pheno -gk 2 -o kinship_matrix_2
+   gemma -bfile plink_pheno -lmm 4 -n 1 -o gwas_results -k ./output/kinship_matrix.cXX.txt
+      ```
+   
