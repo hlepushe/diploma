@@ -24,4 +24,5 @@
    ```
    gemma -bfile plink_pheno -lmm 4 -n 1 -o gwas_results -k ./output/kinship_matrix.cXX.txt
    ```
-   
+6. Отдельно были сделаны гвасы на только карельских образцах, имеют в названии karel_only. Фенотипы: до 80 - bush, 80-180 - short, 180-200 high, >200 - one
+7. Переделан фенотип 80-150 - short, 150-200 - high. При этом одбрзец №1 поменял short -- high. Файлы фенотипов karel2_, префикс остальных файлов - new_. Переделаны гвасы для short и high.   
